@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\MinGW\\include", 
+                "C:\\Users\\Nicole\\Documents\\project\\0x7c00\\ref\\Bootloader\\gnu-efi", 
+                "C:\\Users\\Nicole\\Documents\\project\\0x7c00\\ref\\Bootloader\\Includes", 
+                "C:\\Users\\Nicole\\Documents\\project\\0x7c00\\ref\\Bootloader\\Sources\\File",
+                "C:\\Users\\Nicole\\Documents\\project\\0x7c00\\ref\\Bootloader\\Sources\\Images",
+                "C:\\Users\\Nicole\\Documents\\project\\0x7c00\\ref\\Bootloader\\Sources\\Protocols"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "windows-gcc-x86"
+        }
+    ],
+    "version": 4
+}

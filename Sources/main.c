@@ -18,6 +18,15 @@ efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable) {
 
     Status = InitGraphicsOutputProtocol();
     if(EFI_ERROR(Status)) {
-        Print(L"Failed to init graphics out protocol! Reason: %r\n", Status);
+        Print(L"Failed to init graphics out protocol! Reason: %r\n", Status); // mark for edit
+
     }
+
+    Status = InitBootConfig(ImageHandle);
+    if(!EFI_ERROR(Status)) {
+        Print(L"Config init!\n");
+        //Print(L"Kernel path : %.*a\n", GetConfigValue("KERNEL_PATH=")) 
+        // MARK FOR EDIT
+    }
+    
 };

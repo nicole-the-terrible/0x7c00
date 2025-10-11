@@ -13,8 +13,8 @@ efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable) {
     InitializeLib(ImageHandle, SystemTable);
     
     EFI_STATUS Status;
-    UINT8 *Imagebuffer;
-    UINTN ImagebufferSize;
+    UINT8 *ImageTgaBuffer;
+    UINTN ImageTgaBufferSize;
 
     Status = InitGraphicsOutputProtocol();
     if(EFI_ERROR(Status)) {
@@ -27,6 +27,22 @@ efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable) {
         Print(L"Config init!\n");
         //Print(L"Kernel path : %.*a\n", GetConfigValue("KERNEL_PATH=")) 
         // MARK FOR EDIT
+    } else {
+        Print(L"Check init boot.cgl! Reason: %r\n", Status);
     }
+
+    Print(L"Check tga header... \n");
+
+    ImageTgaBuffer = LoadTgaImage(ImageHandle, L"image.tga");
+    if(ImageTgaBuffer != NULL) {
+        Print(L"Tga imange header loaded successfully!\n");
+
+        ImageTgaBufferSize = sizeof(ImageTgaBuffer);
+
+        DrawTgaImage(ImageTgaBuffer, ImageTgaBufferSize);
+    }
+
+    while(1){};
     
-};
+    return EFI_SUCCESS
+}

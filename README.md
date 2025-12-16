@@ -1,6 +1,6 @@
-# 0x7c00 
+# 0x7c00 WIP depression break
 
-Toy bootloader project, named it 0x7c00 because *check note* ahh autism overload:3. this isn't meant to be production-grade, it just a tinkering project for fun.
+Toy bootloader project, named it 0x7c00 because of course, why not. This isn't meant to be production-grade, it just a tinkering project for fun.
 
 ## what this, owo
 - a bootloader
